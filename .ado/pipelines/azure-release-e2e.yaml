@@ -26,7 +26,7 @@ parameters:
 
 variables:
 - name:  'environment' # set the environment name as variable
-  value: 'e2e'
+  value: 'int'
 
 - template: config/configuration.yaml # contains version numbers and global configuration settings
 - name:  'workingDirectory'    # Terraform root working directory
@@ -34,7 +34,7 @@ variables:
 - name:  'azureServiceConnection' # environment specific service connection
   value: 'alwayson-${{ variables.environment }}-serviceconnection'
 
-- template: config/variables-values-e2e.yaml # contains environment-specific values (non-secret)
+- template: config/variables-values-int.yaml # contains environment-specific values (non-secret)
 
 # We do not use custom domains for e2e envs so we set this variable to empty
 - name: 'terraformAdditionalParametersCustomDomains'
